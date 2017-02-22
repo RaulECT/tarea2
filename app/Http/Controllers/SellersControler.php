@@ -61,9 +61,15 @@ class SellersControler extends Controller
 
     if ( $request->isMethod( 'put' )  )
     {
-      $attributes = $request->all();
-      $seller->update( $attributes );
-      return $seller;
+      if( is_null( $request->first_name ) && is_null( $request->last_name ) ){
+        return "NULL";
+      }else
+      {
+        $attributes = $request->all();
+        $seller->update( $attributes );
+        return $seller;
+      }
+
     } else
     {
       $attributes = $request->all();

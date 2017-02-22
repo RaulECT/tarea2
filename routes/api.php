@@ -28,7 +28,6 @@ Route::post( 'addresses', 'AddressesController@store' );
 Route::post( 'sellers/{seller}/addresses', 'SellersControler@attach' );
 Route::put( 'sellers/{seller}/addresses', 'SellersControler@updateAddress' );
 
-
 //PRODUCTS
 Route::get( 'products', 'ProductsController@index' );
 Route::get( 'products/{product}', 'ProductsController@show' );
@@ -37,6 +36,7 @@ Route::put( 'products/{product}', 'ProductsController@update' );
 Route::patch( 'products/{product}', 'ProductsController@update' );
 Route::post( 'products/{product}/reviews', 'ReviewsController@store' );
 Route::get( 'products/{product}/reviews', 'ReviewsController@show' );
+Route::delete( 'products/{product}/reviews/{review}', 'ReviewsController@destroy' );
 Route::delete( 'products/{product}', 'ProductsController@destroy' );
 
 

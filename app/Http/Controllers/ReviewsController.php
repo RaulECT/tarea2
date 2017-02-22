@@ -11,6 +11,27 @@ use Illuminate\Support\Facades\App;
 class ReviewsController extends Controller
 {
     //
+  public function destroy( Product $product, Review $review )
+  {
+    $productsReview = ProductsReview::all();
+    $productId = $product->id;
+    $reviewId = $review->id;
+
+
+    /*foreach ( $productsReview as $productReview )
+    {
+      if ( ( $productReview->product_id == $productId ) && ( $productReview->review_id == $reviewId ) )
+      {
+
+        break;
+      }
+    }*/
+
+    $review->delete();
+
+    //return \Response::json( [], 200 );
+  }
+
   public function show( Product $product )
   {
     $productsReview = ProductsReview::all();
