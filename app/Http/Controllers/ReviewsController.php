@@ -27,9 +27,9 @@ class ReviewsController extends Controller
       }
     }*/
 
-    $review->delete();
+    //$review->delete();
 
-    //return \Response::json( [], 200 );
+    return \Response::json( [], 200 );
   }
 
   public function show( Product $product )
